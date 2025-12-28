@@ -1,0 +1,207 @@
+/* ====================================
+   ANIMATIONS & TRANSITIONS
+   Refer to: MASTER_DESIGN_SYSTEM.md -> Animations
+   ==================================== */
+
+/* ====================================
+   FADE IN ANIMATIONS
+   ==================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====================================
+   SCROLL REVEAL CLASSES
+   ==================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+    transition:
+        opacity var(--duration-slow) var(--ease-out),
+        transform var(--duration-slow) var(--ease-out),
+        filter var(--duration-slow) var(--ease-out);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* Staggered delays for grid items */
+.reveal-delay-1 {
+    transition-delay: 100ms;
+}
+
+.reveal-delay-2 {
+    transition-delay: 200ms;
+}
+
+.reveal-delay-3 {
+    transition-delay: 300ms;
+}
+
+.reveal-delay-4 {
+    transition-delay: 400ms;
+}
+
+/* ====================================
+   HERO ANIMATIONS
+   ==================================== */
+@keyframes blurFadeIn {
+    0% {
+        opacity: 0;
+        filter: blur(20px);
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.hero__title {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero__word {
+    display: inline-block;
+    opacity: 0;
+    animation: blurFadeIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.hero__word:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.hero__word:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.hero__word:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.hero__subtitle {
+    animation: blurFadeIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+    display: flex;
+    gap: 0.4em;
+    justify-content: center;
+}
+
+.hero__profession {
+    display: inline-block;
+    min-width: 180px;
+    text-align: right;
+}
+
+.hero__location {
+    opacity: 0.7;
+}
+
+/* ====================================
+   NAV ANIMATIONS
+   ==================================== */
+.nav {
+    animation: fadeInDown 0.6s var(--ease-out) both;
+}
+
+/* ====================================
+   HOVER EFFECTS
+   ==================================== */
+.hover-lift {
+    transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+}
+
+.hover-scale {
+    transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.hover-scale:hover {
+    transform: scale(1.02);
+}
+
+/* ====================================
+   LOADING ANIMATION
+   ==================================== */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.loading {
+    animation: pulse 1.5s var(--ease-in-out) infinite;
+}
+
+/* ====================================
+   PAGE TRANSITION
+   ==================================== */
+.page-transition {
+    animation: fadeIn 0.4s var(--ease-out) both;
+}
+
+/* ====================================
+   REDUCED MOTION
+   For accessibility - respects user preference
+   ==================================== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}

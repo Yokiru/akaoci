@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>YOSIA - Web Designer & Full-Stack Developer</title>
+  <meta name="description"
+    content="Portfolio website Yosia - Web Designer dengan 5+ tahun pengalaman, spesialisasi UI/UX dan Business Management Systems.">
+  <meta name="keywords" content="web designer, full-stack developer, UI/UX, business systems, Indonesia">
+  <meta name="author" content="Yosia">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="YOSIA - Web Designer & Full-Stack Developer">
+  <meta property="og:description" content="Portfolio website Yosia - Web Designer dengan 5+ tahun pengalaman.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Y</text></svg>">
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main" class="sr-only">Skip to main content</a>
+
+  <!-- Navigation -->
+  <header class="nav" role="banner">
+    <nav class="nav__inner" aria-label="Main navigation">
+      <a href="index.html" class="nav__logo" aria-label="YOSIA Home">YOSIA©</a>
+
+      <ul class="nav__menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" class="nav__link active" role="menuitem">Home</a></li>
+        <li role="none"><a href="works.html" class="nav__link" role="menuitem">Works</a></li>
+        <li role="none"><a href="contact.html" class="nav__link" role="menuitem">Contact</a></li>
+        <li role="none" class="nav__menu-clock hide-desktop">
+          <span id="nav-menu-clock">ID 00:00</span>
+        </li>
+      </ul>
+
+      <span class="nav__info hide-mobile" id="nav-clock" aria-live="polite">ID 00:00</span>
+
+      <button class="nav__menu-btn hide-desktop" aria-label="Toggle menu" aria-expanded="false"
+        aria-controls="nav-menu">
+        MENU
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main" class="page-transition">
+
+    <!-- Hero Section (Fixed Background) -->
+    <section class="hero section" aria-labelledby="hero-title">
+      <!-- Cursor following images container -->
+      <div class="hero__cursor-images" id="cursor-images"></div>
+
+      <div class="container text-center">
+        <h1 id="hero-title" class="hero__title">
+          <span class="hero__line">YOSIA</span>
+          <span class="hero__line">AKA OCI</span>
+        </h1>
+        <p class="hero__subtitle hide-mobile">
+          <span id="profession-text" class="hero__profession">Web Designer</span>
+          <span class="hero__location">from Indonesia</span>
+        </p>
+        <p class="hero__subtitle hero__subtitle--mobile hide-desktop">
+          Designer & Developer
+        </p>
+      </div>
+    </section>
+
+    <!-- Spacer to push content below fixed hero -->
+    <div class="hero-spacer"></div>
+
+    <!-- Content that slides over hero -->
+    <div class="main-content">
+
+      <!-- Selected Works Section -->
+      <section class="section section--first" aria-labelledby="works-title">
+        <div class="container">
+          <header class="section-header reveal">
+            <h2 id="works-title" class="section-title">Selected Works</h2>
+            <a href="works.html" class="section-link hide-mobile">See all works</a>
+          </header>
+
+          <div class="grid grid--2" id="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card reveal">
+              <div class="project-card__image-wrapper">
+                <img src="assets/images/project-1.jpg" alt="Project 1" class="project-card__image">
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Coming Soon</h3>
+                <p class="project-card__category">Designing the future of sustainable agriculture</p>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card reveal reveal-delay-1">
+              <div class="project-card__image-wrapper">
+                <img src="assets/images/project-2.jpg" alt="Project 2" class="project-card__image">
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Coming Soon</h3>
+                <p class="project-card__category">Creating seamless user experiences</p>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card reveal reveal-delay-2">
+              <div class="project-card__image-wrapper">
+                <img src="assets/images/project-3.jpg" alt="Project 3" class="project-card__image">
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Coming Soon</h3>
+                <p class="project-card__category">Building efficient business management systems</p>
+              </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="project-card reveal reveal-delay-3">
+              <div class="project-card__image-wrapper">
+                <img src="assets/images/project-4.jpg" alt="Project 4" class="project-card__image">
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Coming Soon</h3>
+                <p class="project-card__category">Full-stack application development</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Mobile only: See all works at bottom -->
+          <a href="works.html" class="section-link section-link--mobile hide-desktop reveal">See all works</a>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="section" aria-labelledby="services-title">
+        <div class="container">
+          <header class="section-header reveal">
+            <h2 id="services-title" class="section-title">Services</h2>
+          </header>
+
+          <div class="grid grid--4" id="services-grid">
+            <!-- Service 1: Web Development -->
+            <article class="service-card reveal">
+              <img src="assets/images/service-1.jpg" alt="Web Development" class="service-card__image">
+              <div class="service-card__overlay">
+                <h3 class="service-card__title">Web Development</h3>
+                <p class="service-card__desc">Building modern, responsive websites with clean code and optimal
+                  performance.</p>
+              </div>
+            </article>
+
+            <!-- Service 2: UI/UX Design -->
+            <article class="service-card reveal reveal-delay-1">
+              <img src="assets/images/service-2.jpg" alt="UI/UX Design" class="service-card__image">
+              <div class="service-card__overlay">
+                <h3 class="service-card__title">UI/UX Design</h3>
+                <p class="service-card__desc">Creating intuitive interfaces that enhance user experience and engagement.
+                </p>
+              </div>
+            </article>
+
+            <!-- Service 3: Business Systems -->
+            <article class="service-card reveal reveal-delay-2">
+              <img src="assets/images/service-3.jpg" alt="Business Systems" class="service-card__image">
+              <div class="service-card__overlay">
+                <h3 class="service-card__title">Business Systems</h3>
+                <p class="service-card__desc">Developing efficient management systems to streamline your operations.</p>
+              </div>
+            </article>
+
+            <!-- Service 4: Web Design -->
+            <article class="service-card reveal reveal-delay-3">
+              <img src="assets/images/service-4.jpg" alt="Web Design" class="service-card__image">
+              <div class="service-card__overlay">
+                <h3 class="service-card__title">Web Design</h3>
+                <p class="service-card__desc">Designing beautiful, user-centered websites that captivate visitors.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Info / About Section -->
+      <section class="section" aria-labelledby="about-title">
+        <div class="container">
+          <div class="info-wrapper">
+            <!-- Left Column: Name, Role, Details -->
+            <div class="info-left">
+              <header class="section-header reveal">
+                <h2 id="about-title" class="section-title">INFO</h2>
+              </header>
+              <p class="info__role reveal reveal-delay-1">Full-Stack Developer</p>
+              <p class="info__location reveal reveal-delay-2">Based in Indonesia</p>
+
+              <div class="info__content" style="margin-top: var(--space-12);">
+                <!-- What I Do -->
+                <div class="info__block reveal">
+                  <h3 class="info__label">What I Do</h3>
+                  <p class="info__text">
+                    I help businesses build functional websites with clean UI/UX and create
+                    management systems that simplify daily operations.
+                  </p>
+                </div>
+
+                <!-- My Background -->
+                <div class="info__block reveal">
+                  <h3 class="info__label">My Background</h3>
+                  <p class="info__text">
+                    With 5+ years of experience as a Web Designer, I've now transitioned into
+                    Full-Stack Development — building custom websites from scratch with a focus
+                    on business management systems.
+                  </p>
+                </div>
+
+                <!-- My Approach -->
+                <div class="info__block reveal">
+                  <h3 class="info__label">My Approach</h3>
+                  <p class="info__text">
+                    I believe great design starts with understanding user needs. Every system
+                    I build is designed to simplify workflows, not add complexity.
+                  </p>
+                </div>
+
+                <!-- Career -->
+                <div class="info__block reveal">
+                  <h3 class="info__label">Career</h3>
+                  <ul class="career-list">
+                    <li class="career-item">
+                      <span class="career-company">Freelance</span>
+                      <span class="career-role">Full-Stack Developer</span>
+                      <span class="career-year">2023 — Present</span>
+                    </li>
+                    <li class="career-item">
+                      <span class="career-company">Studio Design</span>
+                      <span class="career-role">Web Designer</span>
+                      <span class="career-year">2018 — 2023</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Image -->
+            <div class="info-right">
+              <div class="info__image reveal">
+                <!-- Using placeholder for now, replace with portrait -->
+                <img src="assets/images/project-2.jpg" alt="Yosia Portrait" class="info__img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.main-content -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__content">
+        <h2 class="footer__title">Get in touch</h2>
+        <nav class="footer__links" aria-label="Contact links">
+          <a href="mailto:yosiamanullang@gmail.com" class="footer__link">Email</a>
+          <a href="https://wa.me/62895360148909" class="footer__link" target="_blank"
+            rel="noopener noreferrer">WhatsApp</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

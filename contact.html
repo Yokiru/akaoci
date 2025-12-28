@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Contact - YOSIA Portfolio</title>
+    <meta name="description"
+        content="Hubungi Yosia untuk project Web Development, UI/UX Design, atau Business Systems.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Y</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: var(--space-12);
+            align-items: start;
+            min-height: calc(100vh - 200px);
+        }
+
+        .contact-intro {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        .contact-title {
+            font-size: 64px;
+            font-weight: var(--font-medium);
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: var(--color-text);
+        }
+
+        .contact-subtitle {
+            font-size: 16px;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        .contact-block {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .contact-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-muted);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-1);
+        }
+
+        .contact-link {
+            font-size: 16px;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: opacity var(--duration-fast) var(--ease-out);
+        }
+
+        .contact-link:hover {
+            opacity: 0.6;
+        }
+
+        .contact-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+
+        @media (max-width: 1024px) {
+            .contact-layout {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-intro {
+                grid-column: 1 / -1;
+            }
+
+            .contact-title {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: var(--space-10);
+            }
+
+            .contact-title {
+                font-size: 40px;
+            }
+
+            .contact-image {
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip Link -->
+    <a href="#main" class="sr-only">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="nav" role="banner">
+        <nav class="nav__inner" aria-label="Main navigation">
+            <a href="index.html" class="nav__logo" aria-label="YOSIA Home">YOSIA©</a>
+
+            <ul class="nav__menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav__link" role="menuitem">Home</a></li>
+                <li role="none"><a href="works.html" class="nav__link" role="menuitem">Works</a></li>
+                <li role="none"><a href="contact.html" class="nav__link active" role="menuitem">Contact</a></li>
+            </ul>
+
+            <span class="nav__info hide-mobile" id="nav-clock" aria-live="polite">ID 00:00</span>
+
+            <button class="nav__menu-btn hide-desktop" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="nav-menu">MENU</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" class="page-transition">
+
+        <!-- Contact Section -->
+        <section class="section" style="padding-top: 120px;">
+            <div class="container">
+                <div class="contact-layout">
+                    <!-- Left: Title & Subtitle -->
+                    <div class="contact-intro reveal">
+                        <h1 class="contact-title">Contact</h1>
+                        <p class="contact-subtitle">
+                            Let's create something meaningful together.
+                            I'd love to hear about your project, big or small.
+                        </p>
+                    </div>
+
+                    <!-- Middle: Contact Info -->
+                    <div class="contact-section reveal reveal-delay-1">
+                        <div class="contact-block">
+                            <span class="contact-label">Email & Phone</span>
+                            <div class="contact-links">
+                                <a href="mailto:yosiamanullang@gmail.com"
+                                    class="contact-link">yosiamanullang@gmail.com</a>
+                                <a href="https://wa.me/62895360148909" class="contact-link" target="_blank"
+                                    rel="noopener noreferrer">+62 895 3601 48909</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-block">
+                            <span class="contact-label">Socials</span>
+                            <div class="contact-links">
+                                <a href="https://instagram.com/yosiaoci" class="contact-link" target="_blank"
+                                    rel="noopener noreferrer">Instagram</a>
+                                <a href="https://github.com/yosiaoci" class="contact-link" target="_blank"
+                                    rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Image -->
+                    <div class="reveal reveal-delay-2">
+                        <img src="assets/images/project-2.jpg" alt="Portrait" class="contact-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+            <div class="footer__content">
+                <h2 class="footer__title">Get in touch</h2>
+                <nav class="footer__links" aria-label="Contact links">
+                    <a href="mailto:yosiamanullang@gmail.com" class="footer__link">Email</a>
+                    <a href="https://wa.me/62895360148909" class="footer__link" target="_blank"
+                        rel="noopener noreferrer">WhatsApp</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

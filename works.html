@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Works - YOSIA Portfolio</title>
+    <meta name="description" content="Portfolio projects Yosia - Web Development, UI/UX Design, dan Business Systems.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Y</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <!-- Skip Link -->
+    <a href="#main" class="sr-only">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="nav" role="banner">
+        <nav class="nav__inner" aria-label="Main navigation">
+            <a href="index.html" class="nav__logo" aria-label="YOSIA Home">YOSIA©</a>
+
+            <ul class="nav__menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav__link" role="menuitem">Home</a></li>
+                <li role="none"><a href="works.html" class="nav__link active" role="menuitem">Works</a></li>
+                <li role="none"><a href="contact.html" class="nav__link" role="menuitem">Contact</a></li>
+            </ul>
+
+            <span class="nav__info hide-mobile" id="nav-clock" aria-live="polite">ID 00:00</span>
+
+            <button class="nav__menu-btn hide-desktop" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="nav-menu">MENU</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" class="page-transition">
+
+        <!-- Page Header -->
+        <section class="section" style="padding-top: 120px; padding-bottom: 0;">
+            <div class="container">
+                <h1 class="works-page__title reveal">ALL WORKS</h1>
+            </div>
+        </section>
+
+        <!-- All Projects -->
+        <section class="section" style="padding-top: var(--space-8);">
+            <div class="container">
+                <div class="grid grid--3" id="all-projects">
+                    <!-- Project 1 -->
+                    <article class="project-card reveal">
+                        <div class="project-card__image-wrapper">
+                            <img src="assets/images/project-1.jpg" alt="Project 1" class="project-card__image">
+                            <div class="project-card__overlay">
+                                <span class="project-card__overlay-title">Project One</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card reveal reveal-delay-1">
+                        <div class="project-card__image-wrapper">
+                            <img src="assets/images/project-2.jpg" alt="Project 2" class="project-card__image">
+                            <div class="project-card__overlay">
+                                <span class="project-card__overlay-title">Project Two</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card reveal reveal-delay-2">
+                        <div class="project-card__image-wrapper">
+                            <img src="assets/images/project-3.jpg" alt="Project 3" class="project-card__image">
+                            <div class="project-card__overlay">
+                                <span class="project-card__overlay-title">Project Three</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-card reveal">
+                        <div class="project-card__image-wrapper">
+                            <img src="assets/images/project-4.jpg" alt="Project 4" class="project-card__image">
+                            <div class="project-card__overlay">
+                                <span class="project-card__overlay-title">Project Four</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="project-card reveal reveal-delay-1">
+                        <div class="project-card__image-wrapper">
+                            <img src="assets/images/project-1.jpg" alt="Project 5" class="project-card__image">
+                            <div class="project-card__overlay">
+                                <span class="project-card__overlay-title">Project Five</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 -->
+                    <article class="project-card reveal reveal-delay-2">
+                        <div class="project-card__image-wrapper">
+                            <img src="assets/images/project-2.jpg" alt="Project 6" class="project-card__image">
+                            <div class="project-card__overlay">
+                                <span class="project-card__overlay-title">Project Six</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+            <div class="footer__content">
+                <h2 class="footer__title">Get in touch</h2>
+                <nav class="footer__links" aria-label="Contact links">
+                    <a href="mailto:yosiamanullang@gmail.com" class="footer__link">Email</a>
+                    <a href="https://wa.me/62895360148909" class="footer__link" target="_blank"
+                        rel="noopener noreferrer">WhatsApp</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
