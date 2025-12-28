@@ -1,0 +1,58 @@
+{
+    "works": [
+        {
+            "id": 1,
+            "title": "Coming Soon",
+            "category": "Designing the future of sustainable agriculture",
+            "image": "assets/images/project-1.jpg",
+            "projectTitle": "Project One"
+        },
+        {
+            "id": 2,
+            "title": "Coming Soon",
+            "category": "Creating seamless user experiences",
+            "image": "assets/images/project-2.jpg",
+            "projectTitle": "Project Two"
+        },
+        {
+            "id": 3,
+            "title": "Coming Soon",
+            "category": "Building efficient business management systems",
+            "image": "assets/images/project-3.jpg",
+            "projectTitle": "Project Three"
+        },
+        {
+            "id": 4,
+            "title": "Coming Soon",
+            "category": "Full-stack application development",
+            "image": "assets/images/project-4.jpg",
+            "projectTitle": "Project Four"
+        }
+    ],
+    "services": [
+        {
+            "id": 1,
+            "title": "Web Development",
+            "description": "Building modern, responsive websites with clean code and optimal performance.",
+            "image": "assets/images/service-1.jpg"
+        },
+        {
+            "id": 2,
+            "title": "UI/UX Design",
+            "description": "Creating intuitive interfaces that enhance user experience and engagement.",
+            "image": "assets/images/service-2.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Business Systems",
+            "description": "Developing efficient management systems to streamline your operations.",
+            "image": "assets/images/service-3.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Web Design",
+            "description": "Designing beautiful, user-centered websites that captivate visitors.",
+            "image": "assets/images/service-4.jpg"
+        }
+    ]
+}

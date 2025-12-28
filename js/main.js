@@ -420,14 +420,144 @@ function initCursorImages() {
 }
 
 // ====================================
+// DYNAMIC CONTENT (SUPABASE)
+// ====================================
+
+async function fetchWorks() {
+  const sb = getSupabase();
+  if (!sb) {
+    console.error('Supabase client not initialized');
+    return [];
+  }
+
+  const { data, error } = await sb
+    .from('works')
+    .select('*')
+    .order('id', { ascending: true });
+
+  if (error) {
+    console.error('Error fetching works:', error);
+    return [];
+  }
+
+  console.log('Works Data Fetched:', data); // DEBUG
+  return data;
+}
+
+async function fetchServices() {
+  const sb = getSupabase();
+  if (!sb) return [];
+
+  const { data, error } = await sb
+    .from('services')
+    .select('*')
+    .order('id', { ascending: true });
+
+  if (error) {
+    console.error('Error fetching services:', error);
+    return [];
+  }
+
+  console.log('Services Data Fetched:', data); // DEBUG
+  return data;
+}
+
+function renderWorks(works) {
+  const grid = document.getElementById('projects-grid') || document.getElementById('all-projects');
+  if (!grid) return;
+
+  // Clear existing skeletal/static content if needed, 
+  // or we can replace the whole innerHTML
+  grid.innerHTML = '';
+
+  works.forEach((work, index) => {
+    const delayClass = index > 0 ? `reveal-delay-${Math.min(index, 4)}` : '';
+    const href = work.project_url && work.project_url.trim() !== '' ? work.project_url : '#';
+    const target = href !== '#' ? 'target="_blank"' : '';
+    const cursorStyle = href !== '#' ? '' : 'cursor: default;';
+
+    const html = `
+            <a href="${href}" ${target} class="project-card reveal ${delayClass}" style="text-decoration: none; color: inherit; display: flex; ${cursorStyle}">
+                <div class="project-card__image-wrapper">
+                    <img src="${work.image_url}" alt="${work.title}" class="project-card__image" loading="lazy">
+                    <div class="project-card__overlay">
+                        <span class="project-card__overlay-title">${work.title}</span>
+                    </div>
+                </div>
+                <div class="project-card__content">
+                    <h3 class="project-card__title">${work.title}</h3>
+                    <p class="project-card__category">${work.category}</p>
+                </div>
+            </a>
+        `;
+    grid.insertAdjacentHTML('beforeend', html);
+  });
+
+  // Re-initialize scroll reveal for new elements
+  if (window.ScrollReveal) {
+    // Optional: if using a library, but here we use custom JS observer
+    // We need to re-observe the new elements
+    initScrollReveal();
+  } else {
+    // Since our initScrollReveal selects elements on load, we might need to re-run it
+    // Or manually observe these new elements.
+    // For simplicity, let's re-run initScrollReveal()
+    setTimeout(initScrollReveal, 100);
+  }
+}
+
+function renderServices(services) {
+  const grid = document.getElementById('services-grid');
+  if (!grid) return;
+
+  grid.innerHTML = '';
+
+  services.forEach((service, index) => {
+    const delayClass = index > 0 ? `reveal-delay-${Math.min(index, 4)}` : '';
+
+    const html = `
+            <article class="service-card reveal ${delayClass}">
+                <div class="service-card__image-wrapper">
+                    <img src="${service.image_url}" alt="${service.title}" class="service-card__image" loading="lazy">
+                    <div class="service-card__overlay">
+                        <h3 class="service-card__title">${service.title}</h3>
+                        <p class="service-card__desc">${service.description}</p>
+                    </div>
+                </div>
+            </article>
+        `;
+    grid.insertAdjacentHTML('beforeend', html);
+  });
+
+  setTimeout(initScrollReveal, 100);
+}
+
+async function loadContent() {
+  // Check if we are on a page that needs content
+  if (!document.getElementById('projects-grid') && !document.getElementById('all-projects') && !document.getElementById('services-grid')) return;
+
+  const works = await fetchWorks();
+  if (works.length > 0) renderWorks(works);
+
+  const services = await fetchServices();
+  if (services.length > 0) renderServices(services);
+}
+
+// ====================================
 // INITIALIZATION
 // ====================================
 document.addEventListener('DOMContentLoaded', () => {
   initClock();
   initMobileMenu();
-  initScrollReveal();
+  initScrollReveal(); // Run initially for static elements
   initActiveNavLink();
   initHeroParallax();
+  // initSmoothScroll(); // Removed: function not defined
+  // initCursor(); // Removed: function not defined
+
+  // Load dynamic content
+  loadContent();
+
   initProfessionScramble();
   initCursorImages();
 

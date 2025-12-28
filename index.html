@@ -41,12 +41,12 @@
   <!-- Navigation -->
   <header class="nav" role="banner">
     <nav class="nav__inner" aria-label="Main navigation">
-      <a href="index.html" class="nav__logo" aria-label="YOSIA Home">YOSIA©</a>
+      <a href="/" class="nav__logo" aria-label="YOSIA Home">YOSIA©</a>
 
       <ul class="nav__menu" id="nav-menu" role="menubar">
-        <li role="none"><a href="index.html" class="nav__link active" role="menuitem">Home</a></li>
-        <li role="none"><a href="works.html" class="nav__link" role="menuitem">Works</a></li>
-        <li role="none"><a href="contact.html" class="nav__link" role="menuitem">Contact</a></li>
+        <li role="none"><a href="/" class="nav__link active" role="menuitem">Home</a></li>
+        <li role="none"><a href="/works" class="nav__link" role="menuitem">Works</a></li>
+        <li role="none"><a href="/contact" class="nav__link" role="menuitem">Contact</a></li>
         <li role="none" class="nav__menu-clock hide-desktop">
           <span id="nav-menu-clock">ID 00:00</span>
         </li>
@@ -99,53 +99,11 @@
           </header>
 
           <div class="grid grid--2" id="projects-grid">
-            <!-- Project 1 -->
-            <article class="project-card reveal">
-              <div class="project-card__image-wrapper">
-                <img src="assets/images/project-1.jpg" alt="Project 1" class="project-card__image">
-              </div>
-              <div class="project-card__content">
-                <h3 class="project-card__title">Coming Soon</h3>
-                <p class="project-card__category">Designing the future of sustainable agriculture</p>
-              </div>
-            </article>
-
-            <!-- Project 2 -->
-            <article class="project-card reveal reveal-delay-1">
-              <div class="project-card__image-wrapper">
-                <img src="assets/images/project-2.jpg" alt="Project 2" class="project-card__image">
-              </div>
-              <div class="project-card__content">
-                <h3 class="project-card__title">Coming Soon</h3>
-                <p class="project-card__category">Creating seamless user experiences</p>
-              </div>
-            </article>
-
-            <!-- Project 3 -->
-            <article class="project-card reveal reveal-delay-2">
-              <div class="project-card__image-wrapper">
-                <img src="assets/images/project-3.jpg" alt="Project 3" class="project-card__image">
-              </div>
-              <div class="project-card__content">
-                <h3 class="project-card__title">Coming Soon</h3>
-                <p class="project-card__category">Building efficient business management systems</p>
-              </div>
-            </article>
-
-            <!-- Project 4 -->
-            <article class="project-card reveal reveal-delay-3">
-              <div class="project-card__image-wrapper">
-                <img src="assets/images/project-4.jpg" alt="Project 4" class="project-card__image">
-              </div>
-              <div class="project-card__content">
-                <h3 class="project-card__title">Coming Soon</h3>
-                <p class="project-card__category">Full-stack application development</p>
-              </div>
-            </article>
+            <!-- Dynamic Content loaded from Supabase -->
           </div>
 
           <!-- Mobile only: See all works at bottom -->
-          <a href="works.html" class="section-link section-link--mobile hide-desktop reveal">See all works</a>
+          <a href="/works" class="section-link section-link--mobile hide-desktop reveal">See all works</a>
         </div>
       </section>
 
@@ -157,43 +115,7 @@
           </header>
 
           <div class="grid grid--4" id="services-grid">
-            <!-- Service 1: Web Development -->
-            <article class="service-card reveal">
-              <img src="assets/images/service-1.jpg" alt="Web Development" class="service-card__image">
-              <div class="service-card__overlay">
-                <h3 class="service-card__title">Web Development</h3>
-                <p class="service-card__desc">Building modern, responsive websites with clean code and optimal
-                  performance.</p>
-              </div>
-            </article>
-
-            <!-- Service 2: UI/UX Design -->
-            <article class="service-card reveal reveal-delay-1">
-              <img src="assets/images/service-2.jpg" alt="UI/UX Design" class="service-card__image">
-              <div class="service-card__overlay">
-                <h3 class="service-card__title">UI/UX Design</h3>
-                <p class="service-card__desc">Creating intuitive interfaces that enhance user experience and engagement.
-                </p>
-              </div>
-            </article>
-
-            <!-- Service 3: Business Systems -->
-            <article class="service-card reveal reveal-delay-2">
-              <img src="assets/images/service-3.jpg" alt="Business Systems" class="service-card__image">
-              <div class="service-card__overlay">
-                <h3 class="service-card__title">Business Systems</h3>
-                <p class="service-card__desc">Developing efficient management systems to streamline your operations.</p>
-              </div>
-            </article>
-
-            <!-- Service 4: Web Design -->
-            <article class="service-card reveal reveal-delay-3">
-              <img src="assets/images/service-4.jpg" alt="Web Design" class="service-card__image">
-              <div class="service-card__overlay">
-                <h3 class="service-card__title">Web Design</h3>
-                <p class="service-card__desc">Designing beautiful, user-centered websites that captivate visitors.</p>
-              </div>
-            </article>
+            <!-- Dynamic Content loaded from Supabase -->
           </div>
         </div>
       </section>
@@ -288,6 +210,9 @@
   </footer>
 
   <!-- Scripts -->
+  <!-- External Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
   <script src="js/main.js"></script>
 </body>
 
